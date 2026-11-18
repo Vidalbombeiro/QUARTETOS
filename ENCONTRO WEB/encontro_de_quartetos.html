@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5º Encontro de Quartetos | 28/11/2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#060d1f',
+                            800: '#0b1633',
+                            700: '#13234d',
+                            600: '#1c3473'
+                        },
+                        gold: {
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            accent: '#d4af37',
+                            light: '#fef08a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+        }
+        .glass-card {
+            background: rgba(19, 35, 77, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+        }
+        .hero-bg {
+            background: radial-gradient(circle at center, #13234d 0%, #060d1f 100%);
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Navbar / Top Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-900/80 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500 flex items-center justify-center text-gold-400 font-serif font-bold text-lg">
+                    5º
+                </div>
+                <div>
+                    <span class="block text-xs uppercase tracking-widest text-gold-400 font-semibold">Igreja Adventista</span>
+                    <span class="text-sm font-bold text-white">Encontro de Quartetos</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#sobre" class="hover:text-gold-400 transition-colors">O Evento</a>
+                <a href="#contador" class="hover:text-gold-400 transition-colors">Contagem</a>
+                <a href="#quartetos" class="hover:text-gold-400 transition-colors">Quartetos</a>
+                <a href="#local" class="hover:text-gold-400 transition-colors">Localização</a>
+            </nav>
+
+            <div>
+                <a href="#local" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full gold-gradient-bg text-navy-900 font-bold text-sm shadow-lg shadow-gold-500/20 hover:opacity-90 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-location-dot mr-2"></i> Como Chegar
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gold-400 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#sobre" class="block py-2 text-gray-200 hover:text-gold-400">O Evento</a>
+            <a href="#contador" class="block py-2 text-gray-200 hover:text-gold-400">Contagem</a>
+            <a href="#quartetos" class="block py-2 text-gray-200 hover:text-gold-400">Quartetos</a>
+            <a href="#local" class="block py-2 text-gray-200 hover:text-gold-400">Localização</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen hero-bg flex items-center justify-center pt-28 pb-16 overflow-hidden">
+        <!-- Decorative light effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-star text-xs"></i>
+                        <span>Igreja Adventista do Sétimo Dia • Ibitinga/SP</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-serif font-bold tracking-tight text-white leading-tight">
+                        5º Encontro de <span class="gold-gradient-text">Quartetos</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Venha louvar a Deus com grandes vozes e muita adoração! Um momento especial de comunhão, música sacra e exaltação ao Criador.
+                    </p>
+
+                    <!-- Date & Time Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <div class="flex items-center space-x-3 glass-card px-5 py-3 rounded-xl border border-gold-500/30 shadow-lg">
+                            <div class="text-gold-400 text-2xl">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-xs text-gray-400 font-medium">DATA</span>
+                                <span class="text-base font-bold text-white">28/11/2026</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3 glass-card px-5 py-3 rounded-xl border border-gold-500/30 shadow-lg">
+                            <div class="text-gold-400 text-2xl">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-xs text-gray-400 font-medium">HORÁRIO</span>
+                                <span class="text-base font-bold text-white">19:00h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to action buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#local" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-gradient-bg text-navy-900 font-bold text-center shadow-xl shadow-gold-500/20 hover:scale-105 transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <span>Ver Localização</span>
+                        </a>
+                        <a href="#quartetos" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-semibold text-center hover:bg-white/10 transition-all border border-gold-500/30">
+                            <span>Conhecer os Quartetos</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Artwork / Poster Showcase -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm sm:max-w-md group">
+                        <!-- Glowing aura behind poster -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-amber-600 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                        
+                        <!-- Poster card simulation mimicking official art -->
+                        <div class="relative rounded-2xl bg-navy-800 border-2 border-gold-500/40 p-5 shadow-2xl overflow-hidden">
+                            <!-- Top badge -->
+                            <div class="text-center pb-4 border-b border-gold-500/20">
+                                <span class="text-xs uppercase tracking-widest text-gold-400 font-bold">5º Encontro</span>
+                                <h3 class="text-3xl font-serif font-bold gold-gradient-text">QUARTETOS</h3>
+                            </div>
+
+                            <!-- Central visual elements -->
+                            <div class="my-6 relative py-12 rounded-xl bg-gradient-to-b from-navy-700 to-navy-900 flex flex-col items-center justify-center border border-gold-500/20 overflow-hidden">
+                                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#eab308_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                                <i class="fa-solid fa-microphone-lines text-5xl text-gold-400 mb-3 animate-pulse"></i>
+                                <div class="text-gold-400 text-sm font-medium tracking-wide">Grandes Vozes & Adoração</div>
+                                
+                                <!-- Musical staff decoration -->
+                                <div class="w-full mt-4 border-t border-b border-gold-500/30 py-1 flex justify-around text-gold-400/60 text-xs">
+                                    <i class="fa-solid fa-music"></i>
+                                    <i class="fa-solid fa-music"></i>
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
+                            </div>
+
+                            <!-- Footer info inside poster -->
+                            <div class="space-y-3 pt-2 text-sm">
+                                <div class="flex items-center justify-between text-gray-300 bg-navy-900/60 p-2.5 rounded-lg border border-gold-500/10">
+                                    <span class="text-gold-400 font-semibold"><i class="fa-regular fa-calendar mr-2"></i>28/11/2026</span>
+                                    <span class="text-gold-400 font-semibold"><i class="fa-regular fa-clock mr-2"></i>19:00h</span>
+                                </div>
+                                <div class="text-center text-xs text-gray-400 pt-1">
+                                    <i class="fa-solid fa-church text-gold-400 mr-1"></i> Igreja Adventista do Sétimo Dia
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="contador" class="py-16 bg-navy-800 border-y border-gold-500/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-gold-400 text-xs sm:text-sm font-bold uppercase tracking-widest block mb-2">Falta Pouco Para Esta Benção</span>
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mb-10">Contagem Regressiva para o Evento</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl border border-gold-500/30 shadow-xl">
+                    <span id="days" class="text-4xl sm:text-6xl font-extrabold gold-gradient-text block">00</span>
+                    <span class="text-xs sm:text-sm uppercase tracking-wider text-gray-300 font-medium mt-2 block">Dias</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-gold-500/30 shadow-xl">
+                    <span id="hours" class="text-4xl sm:text-6xl font-extrabold gold-gradient-text block">00</span>
+                    <span class="text-xs sm:text-sm uppercase tracking-wider text-gray-300 font-medium mt-2 block">Horas</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-gold-500/30 shadow-xl">
+                    <span id="minutes" class="text-4xl sm:text-6xl font-extrabold gold-gradient-text block">00</span>
+                    <span class="text-xs sm:text-sm uppercase tracking-wider text-gray-300 font-medium mt-2 block">Minutos</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-gold-500/30 shadow-xl">
+                    <span id="seconds" class="text-4xl sm:text-6xl font-extrabold gold-gradient-text block">00</span>
+                    <span class="text-xs sm:text-sm uppercase tracking-wider text-gray-300 font-medium mt-2 block">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Message Section -->
+    <section id="sobre" class="py-20 bg-navy-900 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="inline-block p-3 rounded-full bg-gold-500/10 text-gold-400 text-2xl mb-2">
+                <i class="fa-solid fa-hands-praying"></i>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Um Encontro Marcado com a Emoção e a Fé</h2>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+                O <strong class="text-gold-400 font-semibold">5º Encontro de Quartetos</strong> da Igreja Adventista do Sétimo Dia em Ibitinga/SP é uma oportunidade maravilhosa para reunir famílias, amigos e irmãos na fé. Venha desfrutar de harmonias celestiais, mensagens inspiradoras através da música e momentos inesquecíveis de adoração a Deus.
+            </p>
+            <div class="pt-4 flex justify-center gap-6">
+                <div class="text-center px-6">
+                    <span class="block text-3xl font-bold gold-gradient-text font-serif">5ª</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">Edição Tradicional</span>
+                </div>
+                <div class="w-px bg-gold-500/20"></div>
+                <div class="text-center px-6">
+                    <span class="block text-3xl font-bold gold-gradient-text font-serif">100%</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">Gratuito</span>
+                </div>
+                <div class="w-px bg-gold-500/20"></div>
+                <div class="text-center px-6">
+                    <span class="block text-3xl font-bold gold-gradient-text font-serif">Deus</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">Em Primeiro Lugar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quartets Section -->
+    <section id="quartetos" class="py-20 bg-navy-800/50 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold-400 text-xs sm:text-sm font-bold uppercase tracking-widest">Atrações Confirmadas</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Quartetos Participantes</h2>
+                <p class="text-gray-300 text-sm sm:text-base">Grandes vozes unidas pelo mesmo propósito de louvar e engrandecer o nome do Senhor.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Quarteto 1 -->
+                <div class="glass-card rounded-2xl p-6 border border-gold-500/30 text-center hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gold-500/10 border-2 border-gold-500 flex items-center justify-center text-gold-400 text-3xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Quarteto TOM4</h3>
+                    <span class="inline-block px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 text-xs font-semibold mb-4">Convidado Especial</span>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Reconhecido por sua harmonização impecável e mensagens profundas de fé e esperança através da canção sacra.
+                    </p>
+                </div>
+
+                <!-- Quarteto 2 -->
+                <div class="glass-card rounded-2xl p-6 border border-gold-500/30 text-center hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gold-500/10 border-2 border-gold-500 flex items-center justify-center text-gold-400 text-3xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Quarteto Ibitinga</h3>
+                    <span class="inline-block px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 text-xs font-semibold mb-4">Anfitrião</span>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        A voz local que acolhe a todos com carinho, dedicação e louvores que tocão o coração da comunidade.
+                    </p>
+                </div>
+
+                <!-- Quarteto 3 -->
+                <div class="glass-card rounded-2xl p-6 border border-gold-500/30 text-center hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gold-500/10 border-2 border-gold-500 flex items-center justify-center text-gold-400 text-3xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-record-vinyl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Vozes da Promessa</h3>
+                    <span class="inline-block px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 text-xs font-semibold mb-4">Participação Especial</span>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Tratando de melodias tradicionais e contemporâneas que exaltam o evangelho eterno.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="local" class="py-20 bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold-400 text-xs sm:text-sm font-bold uppercase tracking-widest">Como Chegar</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Local do Evento</h2>
+                <p class="text-gray-300 text-sm sm:text-base">Venha nos visitar e participar conosco deste culto solene.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Location Details Card -->
+                <div class="lg:col-span-5 glass-card p-8 rounded-2xl border border-gold-500/30 shadow-xl space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-church"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Igreja Adventista do Sétimo Dia</h4>
+                            <p class="text-sm text-gray-400 mt-1">Sede Ibitinga - SP</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 pt-4 border-t border-gold-500/20">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Endereço</h4>
+                            <p class="text-base font-semibold text-white mt-1">Rua Tiradentes, 456</p>
+                            <p class="text-sm text-gray-300">Centro - Ibitinga / SP</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Tiradentes+456+Centro+Ibitinga+SP" target="_blank" class="w-full py-4 rounded-xl gold-gradient-bg text-navy-900 font-bold text-center block shadow-lg shadow-gold-500/20 hover:opacity-90 transition-all">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i> Abrir no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Box / Simulated Embed Frame -->
+                <div class="lg:col-span-7 h-96 rounded-2xl overflow-hidden border-2 border-gold-500/30 shadow-2xl relative bg-navy-800">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.8!2d-48.828!3d-21.758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUsOzYSBUaXJhZGVudGVzLCA0NTYgLSBDZW50cm8sIEliaXRpbmdhIC0gU1A!5e0!3m2!1spt-BR!2sbr!4v1700000000000">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-gold-500/20 py-12 text-center text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <div class="flex justify-center items-center space-x-2 text-gold-400 font-serif font-bold text-lg">
+                <i class="fa-solid fa-star text-xs"></i>
+                <span>5º Encontro de Quartetos</span>
+                <i class="fa-solid fa-star text-xs"></i>
+            </div>
+            <p>Igreja Adventista do Sétimo Dia • Rua Tiradentes, 456 - Centro, Ibitinga SP</p>
+            <p class="text-xs text-gray-500 pt-4">&copy; 2026 Todos os direitos reservados. Venha louvar a Deus conosco!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Countdown & Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Countdown Timer Logic
+        // Target date: November 28, 2026 at 19:00:00
+        const eventDate = new Date("Nov 28, 2026 19:00:00").getTime();
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
