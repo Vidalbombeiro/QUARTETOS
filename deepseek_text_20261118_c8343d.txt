@@ -1,0 +1,5 @@
+
+### Opção C — Windows (Prompt de Comando / CMD)
+
+```cmd
+type nul > README.md
