@@ -1,0 +1,21 @@
+
+> Todo o código (estilo e script) está dentro do próprio `index.html`.
+> Não há dependências externas, frameworks ou build.
+
+---
+
+## 🚀 Como usar
+
+1. Abra o arquivo `index.html` em qualquer navegador moderno
+   (ou publique em um servidor estático — GitHub Pages, Netlify, etc.).
+2. Preencha o formulário e clique em **"Participar do Sorteio"**.
+3. Os dados são gravados na planilha vinculada ao Google Apps Script.
+
+---
+
+## ⚙️ Configuração do backend (Google Apps Script)
+
+O front-end envia os dados via `POST` para o endpoint definido em:
+
+```javascript
+const URL_GOOGLE_SCRIPT = "https://script.google.com/macros/s/AKfycbz.../exec";

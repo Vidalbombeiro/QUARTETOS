@@ -1,0 +1,10 @@
+
+E no **Checklist antes de divulgar**, remova o item "URL `URL_GOOGLE_SCRIPT` atualizada no HTML" (já está) e deixe só o teste real:
+
+```markdown
+## 🧪 Checklist antes de divulgar
+
+- [ ] Endpoint do Apps Script ativo (a URL já está no código)
+- [ ] Planilha com a aba `Inscricoes` criada
+- [ ] Teste de inscrição realizado e **conferido na planilha**
+- [ ] Página publicada (HTTPS recomendado)
