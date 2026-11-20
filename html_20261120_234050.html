@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5º Encontro de Quartetos - Sorteio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b1a30;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #122b4a;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 450px; /* Aumentei um pouco para a imagem caber melhor */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        
+        /* NOVO: Estilo para a imagem do cartaz */
+        .cartaz-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #f1c40f; /* Borda dourada combinando com o tema */
+        }
+
+        h2 {
+            color: #f1c40f;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #f1c40f;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .field-label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #f1c40f;
+            color: #0b1a30;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #d4ac0d;
+        }
+        button:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+        #mensagemSucesso {
+            display: none;
+            margin-top: 20px;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- NOVO: Imagem do Cartaz inserida aqui -->
+        <img src="cartaz.jpg" alt="Cartaz 5º Encontro de Quartetos" class="cartaz-img">
+
+        <h2>Participe do Sorteio!</h2>
+
+        <form id="formSorteio">
+            <label for="nome" class="field-label">Nome completo</label>
+            <input type="text" id="nome" placeholder="Seu nome completo" required>
+
+            <label for="telefone" class="field-label">Telefone/WhatsApp</label>
+            <input type="tel" id="telefone" placeholder="Seu telefone/WhatsApp (com DDD)" required>
+
+            <label for="presente" class="field-label">Você gostaria de um presente especial?</label>
+            <select id="presente" required>
+                <option value="">Selecione uma opção...</option>
+                <option value="Sim">Sim, com certeza!</option>
+                <option value="Não">Não, obrigado.</option>
+            </select>
+
+            <button type="submit">Participar do Sorteio</button>
+        </form>
+
+        <div id="mensagemSucesso">
+            ✅ Inscrição realizada com sucesso!<br>Boa sorte!
+        </div>
+    </div>
+
+    <script>
+        const URL_GOOGLE_SCRIPT = "https://script.google.com/macros/s/AKfycbz-bcx-pPS2xZRtTqwkZrSPcjYLOnPKjX7H0gLFRjimZFTsJlm6KAkvZb62o3wDC3I6dQ/exec";
+
+        const formSorteio = document.getElementById('formSorteio');
+        const submitButton = formSorteio.querySelector('button[type="submit"]');
+
+        formSorteio.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const presente = document.getElementById('presente').value;
+
+            console.log('[Sorteio] Submit interceptado:', { nome, telefone, presente });
+
+            if (!nome || !telefone) {
+                console.warn('[Sorteio] Validação falhou: nome ou telefone vazio.');
+                alert('Preencha seu nome e telefone.');
+                return;
+            }
+
+            if (!presente) {
+                console.warn('[Sorteio] Validação falhou: presente não selecionado.');
+                alert('Selecione uma opção de presente.');
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+
+            const payload = { nome, telefone, presente };
+            console.log('[Sorteio] Enviando payload:', payload);
+
+            fetch(URL_GOOGLE_SCRIPT, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                console.log('[Sorteio] fetch concluído (no-cors: resposta não é legível).');
+                
+                formSorteio.style.display = 'none';
+                document.getElementById('mensagemSucesso').style.display = 'block';
+            })
+            .catch((err) => {
+                console.error('[Sorteio] Falha no envio:', err);
+                submitButton.disabled = false;
+                submitButton.textContent = 'Participar do Sorteio';
+                alert('Erro ao enviar. Verifique sua conexão e tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>
